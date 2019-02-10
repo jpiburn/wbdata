@@ -5,19 +5,22 @@ Authors@R:
     person(given = "Jesse",
            family = "Piburn",
            role = c("aut", "cre"),
-           email = "piburnjo@ornl.gov")
+           email = "jesse.piburn@gmail.com")
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
+URL: https://github.com/jpiburn/wbdata
+BugReports: https://github.com/jpiburn/wbdata/issues
 Depends: 
     R (>= 3.1)
+Imports: 
+    httr,
+    jsonlite,
+    rlang (>= 0.1.2),
+    tibble
 Suggests: 
     covr,
     roxygen2,
     testthat
-URL: https://github.com/jpiburn/wbdata
-BugReports: https://github.com/jpiburn/wbdata/issues
+Encoding: UTF-8
+LazyData: true
 RoxygenNote: 6.1.1
-Imports: 
-    rlang (>= 0.1.2)
