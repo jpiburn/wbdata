@@ -16,3 +16,4 @@ Suggests:
     covr
 URL: https://github.com/jpiburn/wbdata
 BugReports: https://github.com/jpiburn/wbdata/issues
+RoxygenNote: 6.1.1
