@@ -1,3 +1,5 @@
+^codecov\.yml$
+^\.travis\.yml$
 ^\.github$
 ^wbdata\.Rproj$
 ^\.Rproj\.user$
