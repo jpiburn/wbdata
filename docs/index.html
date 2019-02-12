@@ -18,7 +18,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-home">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -66,20 +66,51 @@
 
       
       </header><div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
+    
 
-
+    
+    
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="wbdata" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#wbdata" class="anchor"></a>wbdata</h1></div>
-<p>R package for accessing the World Bank API - an update to wbstats</p>
+<p>The goal of wbdata is to …</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install the released version (not yet) of wbdata from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"wbdata"</span>)</code></pre></div>
 </div>
-<div id="code-of-conduct" class="section level1">
-<h1 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h1>
-<p>Please note that the ‘wbdata’ project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
-</div>
+<div id="example" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example" class="anchor"></a>Example</h2>
+<p>This is a basic example which shows you how to solve a common problem:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(wbdata)
 
+cn &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_countries.html">get_countries</a></span>()
+
+cn
+<span class="co">#&gt; # A tibble: 304 x 18</span>
+<span class="co">#&gt;    iso3c iso2c country       capital_city  longitude latitude region_iso3c</span>
+<span class="co">#&gt;  * &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;             &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;       </span>
+<span class="co">#&gt;  1 ABW   AW    Aruba         Oranjestad       -70.0     12.5  LCN         </span>
+<span class="co">#&gt;  2 AFG   AF    Afghanistan   Kabul             69.2     34.5  SAS         </span>
+<span class="co">#&gt;  3 AFR   A9    Africa        &lt;NA&gt;              NA       NA    &lt;NA&gt;        </span>
+<span class="co">#&gt;  4 AGO   AO    Angola        Luanda            13.2    - 8.81 SSF         </span>
+<span class="co">#&gt;  5 ALB   AL    Albania       Tirane            19.8     41.3  ECS         </span>
+<span class="co">#&gt;  6 AND   AD    Andorra       Andorra la V~      1.52    42.5  ECS         </span>
+<span class="co">#&gt;  7 ANR   L5    Andean Region &lt;NA&gt;              NA       NA    &lt;NA&gt;        </span>
+<span class="co">#&gt;  8 ARB   1A    Arab World    &lt;NA&gt;              NA       NA    &lt;NA&gt;        </span>
+<span class="co">#&gt;  9 ARE   AE    United Arab ~ Abu Dhabi         54.4     24.5  MEA         </span>
+<span class="co">#&gt; 10 ARG   AR    Argentina     Buenos Aires     -58.4    -34.6  LCN         </span>
+<span class="co">#&gt; # ... with 294 more rows, and 11 more variables: region_iso2c &lt;chr&gt;,</span>
+<span class="co">#&gt; #   region &lt;chr&gt;, admin_region_iso3c &lt;chr&gt;, admin_region_iso2c &lt;chr&gt;,</span>
+<span class="co">#&gt; #   admin_region &lt;chr&gt;, income_level_iso3c &lt;chr&gt;,</span>
+<span class="co">#&gt; #   income_level_iso2c &lt;chr&gt;, income_level &lt;chr&gt;,</span>
+<span class="co">#&gt; #   lending_type_iso3c &lt;chr&gt;, lending_type_iso2c &lt;chr&gt;, lending_type &lt;chr&gt;</span></code></pre></div>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -107,17 +138,10 @@
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://travis-ci.org/jpiburn/wbdata"><img src="https://travis-ci.org/jpiburn/wbdata.svg?branch=master" alt="Travis build status"></a></li>
-<li><a href="https://codecov.io/github/jpiburn/wbdata?branch=master"><img src="https://codecov.io/gh/jpiburn/wbdata/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
-<li><a href="https://cran.r-project.org/package=wbdata"><img src="https://www.r-pkg.org/badges/version/wbdata" alt="CRAN status"></a></li>
-</ul>
+      </div>
+
 </div>
-</div>
-</div>
+
 
       <footer><div class="copyright">
   <p>Developed by Jesse Piburn.</p>
