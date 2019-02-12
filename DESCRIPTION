@@ -15,10 +15,14 @@ Depends:
 Imports: 
     httr,
     jsonlite,
+    readr,
     rlang (>= 0.1.2),
+    stringr,
     tibble
 Suggests: 
+    clisymbols,
     covr,
+    crayon,
     roxygen2,
     testthat
 Encoding: UTF-8

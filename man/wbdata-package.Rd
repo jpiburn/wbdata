@@ -17,7 +17,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Jesse Piburn \email{piburnjo@ornl.gov}
+\strong{Maintainer}: Jesse Piburn \email{jesse.piburn@gmail.com}
 
 }
 \keyword{internal}
