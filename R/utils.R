@@ -6,11 +6,24 @@
 #' @param x A function argument
 #' @param true What to return if x is missing. Default is `NA`
 #' @param false What to return if x is not missing. Default to return itself
+#'
+#' @noRd
 if_missing <- function(x, true = NA, false = x) {
   ifelse(missing(x), true, false)
 }
 
-
-
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @noRd
+check_mark_text <- function() {
+  if (
+    requireNamespace("crayon", quietly = TRUE) &
+    requireNamespace("clisymbols", quietly = TRUE)
+  ) check_mark <- crayon::green(clisymbols::symbol$tick)
+  else check_mark <- ""
+}
 
 

@@ -35,4 +35,3 @@ cn <- get_countries()
 
 cn
 ```
-

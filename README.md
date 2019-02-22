@@ -3,7 +3,7 @@
 wbdata
 ======
 
-The goal of wbdata is to ...
+The goal of wbdata is to ... 
 
 Installation
 ------------
