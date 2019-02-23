@@ -1,4 +1,4 @@
-#' Title
+#' Refresh the wbdata cache
 #'
 #' @param dir
 #' @param lang
@@ -100,8 +100,7 @@ dir <- options()$wbdata.cache_dir
     lending_types = lending_types,
     languages     = languages
   )
- # need to make into list, then save
-  # then update the options timestamp and filepath
+
   saveRDS(wb_cache, file = file.path(dir, "wb_cache.rds"))
 
   options(wbdata.cache_timestamp = Sys.time())
@@ -110,18 +109,49 @@ dir <- options()$wbdata.cache_dir
 }
 
 
-refresh_cache_on_load <- function(refresh_on_load = TRUE) {
+#' Set wbdata cache to automatically refresh on loading wbdata
+#'
+#' @param refresh_on_load
+#' @param tim
+#' @param units
+#'
+#' @return
+#' @export
+#'
+#' @examples
+refresh_cache_on_load <- function(refresh_on_load = TRUE,
+                                  tim = 7,
+                                  units = "days") {
   options(wbdata.refresh_cache_on_load = refresh_on_load)
+  if (refresh_on_load) options(wbdata.cache_life = as.difftime(tim, units = units))
 
   invisible(refresh_on_load)
 }
 
 
+#' Read wbdata cache from directory
+#'
+#' @param dir
+#'
+#' @return
+#' @export
+#'
+#' @examples
 read_cache <- function(dir) {
+  if (missing(dir)) dir <- options()$wbdata.cache_dir
+  if (is.null(dir)) stop("Please provide the cache directory or set
+                         a new one by running `refresh_cache()`")
 
+  readRDS(file.path(dir, "wb_cache.rds"))
 }
 
-check_refresh_on_load <- function(fresh_limit = 7, units = "days") {
+
+#' Check for cache refresh
+#'
+#' @return
+#'
+#' @noRd
+check_refresh_on_load <- function() {
   op <- options()
 
   if (op$wbdata.refresh_cache_on_load) {
@@ -130,16 +160,15 @@ check_refresh_on_load <- function(fresh_limit = 7, units = "days") {
 
     if (is.null(cache_timestamp)) refresh_cache()
     else {
-      time_since_last_cache <- difftime(Sys.time(),
-                                        cache_timestamp,
-                                        units = units)
+      time_since_last_cache <- difftime(Sys.time(), cache_timestamp)
+      cache_life <- op$wbdata.cache_life
 
-      if (time_since_last_cache >= fresh_limit) {
+      if (time_since_last_cache >= cache_life) {
         cat("wbdata cache hasn't updated in", round(time_since_last_cache, 1),
-            units, "\n")
+            units(time_since_last_cache), "\n")
         refresh_cache()
         cat("To disable auto refresh in the future, run the following command\n",
-            "`options(wbdata.refresh_cache_on_load = FALSE)`")
+            "`refresh_cache_on_load(FALSE)`")
       }
     }
 

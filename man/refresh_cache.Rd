@@ -2,7 +2,7 @@
 % Please edit documentation in R/cache.R
 \name{refresh_cache}
 \alias{refresh_cache}
-\title{Title}
+\title{Refresh the wbdata cache}
 \usage{
 refresh_cache(dir, lang, ...)
 }
@@ -10,5 +10,5 @@ refresh_cache(dir, lang, ...)
 \item{...}{}
 }
 \description{
-Title
+Refresh the wbdata cache
 }

@@ -4,6 +4,7 @@
     wbdata.lang = "en",
     wbdata.cache_dir = NULL,
     wbdata.refresh_cache_on_load = FALSE,
+    wbdata.cache_life = as.difftime(7, units = "days"),
     wbdata.cache_timestamp = NULL
   )
 
